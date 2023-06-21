@@ -1,0 +1,387 @@
+{
+	"info": {
+		"_postman_id": "0c18b2e4-cbec-4f89-95eb-2f107fbf9694",
+		"name": "postman collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23145147"
+	},
+	"item": [
+		{
+			"name": "Sign Up",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable('token', jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"email\": \"pepe@mail.com\",\r\n    \"password\": \"a2asfGfdfdf4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 123456789,\r\n            \"cityCode\": 10,\r\n            \"countryCode\": \"AR\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/sign-up",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"sign-up"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"email\": \"pepe@mail.com\",\r\n    \"password\": \"a2asfGfdfdf4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 123456789,\r\n            \"cityCode\": 10,\r\n            \"countryCode\": \"AR\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Location",
+							"value": "http://localhost:8080/api/v1/sign-up"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Jun 2023 13:38:34 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"cd3f713f-9c09-4b2b-867e-08e05e021972\",\n    \"created\": \"Jun 13, 2023 10:38:34 AM\",\n    \"lastLogin\": \"Jun 13, 2023 10:38:34 AM\",\n    \"name\": \"Pepe\",\n    \"email\": \"pepe@mail.com\",\n    \"password\": \"$2a$10$BoHkIQhs3rpYSrz1Td6t/uXImlidykHM1WJS/z9eXKFxE2Ke77E9.\",\n    \"phones\": [\n        {\n            \"number\": 123456789,\n            \"cityCode\": 10,\n            \"countryCode\": \"AR\"\n        }\n    ],\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZDNmNzEzZi05YzA5LTRiMmItODY3ZS0wOGUwNWUwMjE5NzIiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL3NpZ24tdXAiLCJleHAiOjE2ODY2NjQxMTR9.brnmyv__pAl0UE0RL6AhMf4N1dS4HAui_lPqhm9n0iU\",\n    \"active\": true\n}"
+				},
+				{
+					"name": "400 - Email exists",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"email\": \"pepe@mail.com\",\r\n    \"password\": \"a2asfGfdfdf4\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 123456789,\r\n            \"cityCode\": 10,\r\n            \"countryCode\": \"AR\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Jun 2023 13:38:42 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"timestamp\": \"2023-06-13T13:38:42.235+00:00\",\n            \"code\": 400,\n            \"details\": \"Email pepe@mail.com it's in use\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "400 - Multiple errors in values",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Pepe\",\r\n    \"email\": \"pepemail.com\",\r\n    \"password\": \"a2asffdfdf\",\r\n    \"phones\": [\r\n        {\r\n            \"number\": 123456789,\r\n            \"cityCode\": 10,\r\n            \"countryCode\": \"AR\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/sign-up",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"sign-up"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Jun 2023 13:47:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"timestamp\": \"2023-06-13T13:47:05.263+00:00\",\n            \"code\": 400,\n            \"details\": \"password: The value entered should have 1 uppercase letter\"\n        },\n        {\n            \"timestamp\": \"2023-06-13T13:47:05.264+00:00\",\n            \"code\": 400,\n            \"details\": \"password: The value should have 2 numbers\"\n        },\n        {\n            \"timestamp\": \"2023-06-13T13:47:05.264+00:00\",\n            \"code\": 400,\n            \"details\": \"email: Please provide a valid email address\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"postman.setGlobalVariable('token', jsonData.token);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer {{token}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Jun 2023 13:39:36 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": \"9c088cdb-3b99-48e8-86f9-80667062aa35\",\n    \"created\": \"Jun 13, 2023 10:39:32 AM\",\n    \"lastLogin\": \"Jun 13, 2023 10:39:36 AM\",\n    \"name\": \"Pepe\",\n    \"email\": \"pepe@mail.com\",\n    \"password\": \"$2a$10$6gSNErwQjSbXHb/4vd0ig..tSJEToIGCDcVTpB5zfTvrGr7D47PiS\",\n    \"phones\": [\n        {\n            \"number\": 123456789,\n            \"cityCode\": 10,\n            \"countryCode\": \"AR\"\n        }\n    ],\n    \"token\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI5YzA4OGNkYi0zYjk5LTQ4ZTgtODZmOS04MDY2NzA2MmFhMzUiLCJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwODAvYXBpL3YxL2xvZ2luIiwiZXhwIjoxNjg2NjY0MTc2fQ.e54vO7IB_YPD-P6pHWnW8aR2XrD4MYBa3wRusWcRC7g\",\n    \"active\": true\n}"
+				},
+				{
+					"name": "400 - No header",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{token}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/v1/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"v1",
+								"login"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 13 Jun 2023 13:46:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": [\n        {\n            \"timestamp\": \"2023-06-13T13:46:25.394+00:00\",\n            \"code\": 400,\n            \"details\": \"Required request header 'Authorization' for method parameter type String is not present\"\n        }\n    ]\n}"
+				}
+			]
+		}
+	]
+}
